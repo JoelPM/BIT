@@ -1,7 +1,9 @@
 # BIT
 Browser Interest Tooling.
 
-A generalized form of TURTLEDOVE. The most basic element of information. Not avian.
+**This is a work in progress.**
+
+A generalized form of TURTLEDOVE. The most basic element of information.
 
 TURTLEDOVE (abbreviated TD in places) is an elegant but high-level approach to introducing privacy in the context of ads. This document assumes that TURTLEDOVE is the right foundation and generalizes the concept while also filling in some details.
 
@@ -28,10 +30,8 @@ const myGroup = {'owner': 'guitarworld.com',
                  'readers': ['premierguitar.com',
                              'reverb.com']
                 };
-navigator.joinAdInterestGroup(myGroup, 30 * kSecsPerDay);
+navigator.joinInterestGroup(myGroup, 30 * kSecsPerDay);
 ```
-
-Th
 
 BIT also makes explicit some requirements for IG privacy and handling:
 * Interest Group membership is only persisted in the user's browser in the IG Registry* (not cookies, not local storage, not ...)
@@ -82,8 +82,14 @@ The response to an ITC Request is JSON that describes where the content can be f
 ```
 
 ## Interest Targeted Content Selection
-When a browser has an opportunity to render ITC it may need to be Multiple pieces of ITC may be available when 
+The process by which a piece of ITC is selected.
+
+When a browser has an opportunity to render ITC there may be several pieces available and a choice must be made. The choice may be made based on value, relevance, or some other metric. The browser needs to define an API that allows eligible parties (those acting on behalf of the page owner) to rank their own ITC, and then provide the page owner a means of choosing from among the final selections. A page owner may also assign selection to a single party, in which case there is no secondary selection process by the page owner.
+
+Furthermore, the page owner may wish to choose between direct page content and ITC so the selection API must support this case (as TD does today).
 
 ## Interest Targeted Content Rendering
+ITC must be rendered in such a way that user interests are protected.
 
 ## Interest Targeted Content Reporting
+Page owners and ITC providers need to be able to report on ITC in an aggregated, privacy preserving way.
