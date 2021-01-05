@@ -89,7 +89,7 @@ When a browser has an opportunity to render ITC there may be several pieces avai
 Furthermore, the page owner may wish to choose between direct page content and ITC so the selection API must support this case (as TD does today).
 
 ## Interest Targeted Content Rendering
-ITC must be rendered in such a way that user interests are protected.
+ITC must be rendered in such a way that Interest Group membership is kept private. TD proposes several mechanisms for this.
 
 ## Interest Targeted Content Reporting
 Page owners and ITC providers need to be able to report on ITC in an aggregated, privacy preserving way.
